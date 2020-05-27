@@ -1,5 +1,5 @@
-import 'package:belajar_flutter/model/movie.dart';
 import 'package:flutter/material.dart';
+import 'package:belajar_flutter/model/movie.dart';
 import 'package:belajar_flutter/style/theme.dart' as Style;
 import 'package:belajar_flutter/bloc/get_playing_movies_bloc.dart';
 import 'package:belajar_flutter/model/movie_response.dart';
@@ -84,7 +84,7 @@ class _NowPlayingState extends State<NowPlaying> {
             indicatorColor: Style.Colors.secondColor,
             indicatorSelectorColor: Style.Colors.fontColor,
             shape: IndicatorShape.circle(size: 10.0),
-            pageView: PageView.builder(
+            child: PageView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: movies.take(5).length,
                 itemBuilder: (context, index) {
