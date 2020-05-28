@@ -3,6 +3,7 @@ import 'package:belajar_flutter/model/movie.dart';
 import 'package:belajar_flutter/style/theme.dart' as Style;
 import 'package:belajar_flutter/bloc/get_playing_movies_bloc.dart';
 import 'package:belajar_flutter/model/movie_response.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:page_indicator/page_indicator.dart';
 
 class NowPlaying extends StatefulWidget {
@@ -44,8 +45,7 @@ class _NowPlayingState extends State<NowPlaying> {
             height: 30.0,
             width: 30.0,
             child: CircularProgressIndicator(
-              valueColor:
-                  AlwaysStoppedAnimation<Color>(Style.Colors.secondColor),
+              valueColor: AlwaysStoppedAnimation<Color>(Style.Colors.mainColor),
               strokeWidth: 3.0,
             ),
           )
@@ -81,8 +81,8 @@ class _NowPlayingState extends State<NowPlaying> {
             align: IndicatorAlign.bottom,
             indicatorSpace: 8.0,
             padding: EdgeInsets.all(5.0),
-            indicatorColor: Style.Colors.secondColor,
-            indicatorSelectorColor: Style.Colors.fontColor,
+            indicatorColor: Style.Colors.mainColor,
+            indicatorSelectorColor: Style.Colors.secondColorDark,
             shape: IndicatorShape.circle(size: 10.0),
             child: PageView.builder(
                 scrollDirection: Axis.horizontal,
@@ -92,7 +92,7 @@ class _NowPlayingState extends State<NowPlaying> {
                     children: <Widget>[
                       Container(
                         width: MediaQuery.of(context).size.width,
-                        height: 220,
+                        height: MediaQuery.of(context).size.height * 0.3,
                         decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
                           image: DecorationImage(
@@ -105,8 +105,8 @@ class _NowPlayingState extends State<NowPlaying> {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                               colors: [
-                                Style.Colors.secondColorDark.withOpacity(0.8),
-                                Style.Colors.secondColor.withOpacity(0.2)
+                                Style.Colors.secondColor,
+                                Style.Colors.mainColor.withOpacity(0.1)
                               ],
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter,
@@ -117,15 +117,17 @@ class _NowPlayingState extends State<NowPlaying> {
                           bottom: 30.0,
                           child: Container(
                             padding: EdgeInsets.only(left: 1.0, right: 1.0),
-                            width: 220,
+                            width: MediaQuery.of(context).size.width,
                             child: Column(
                               children: <Widget>[
                                 Text(movies[index].title,
-                                    style: TextStyle(
-                                        height: 1.5,
-                                        color: Style.Colors.fontColor,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16.0))
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                            height: 1.5,
+                                            wordSpacing: 1.2,
+                                            color: Style.Colors.mainColorDark,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0)))
                               ],
                             ),
                           ))

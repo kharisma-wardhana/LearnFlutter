@@ -52,7 +52,7 @@ class MovieRepository {
       "api_key": apiKey,
       "language": "en_US",
       "page": 1,
-      "with_genre": id
+      "with_genres": id
     };
     try {
       Response res = await _dio.get(getDiscoverURL, queryParameters: params);
