@@ -101,14 +101,15 @@ class _GenreMoviesState extends State<GenreMovies> {
                   movies[index].poster == null
                       ? Container(
                           width: 110,
-                          height: size.height * 0.2,
-                          padding: EdgeInsets.only(left: 5),
+                          height: size.height * 0.25,
+                          margin: EdgeInsets.only(left: 5),
                           decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                               color: Style.Colors.secondColor,
                               shape: BoxShape.rectangle),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Icon(
                                 EvaIcons.filmOutline,
@@ -136,7 +137,7 @@ class _GenreMoviesState extends State<GenreMovies> {
                     height: 2,
                   ),
                   Container(
-                    width: 100,
+                    width: 90,
                     child: Center(
                       child: Text(
                         movies[index].title,
