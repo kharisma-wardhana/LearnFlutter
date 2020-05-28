@@ -1,10 +1,11 @@
 import 'package:belajar_flutter/model/genre_response.dart';
 import 'package:belajar_flutter/model/movie_response.dart';
 import 'package:belajar_flutter/model/person_response.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dio/dio.dart';
 
 class MovieRepository {
-  final String apiKey = "2b75defa27c933d072274d82b4afcaf6";
+  final String apiKey = DotEnv().env['TMDB_API_KEY'];
   static final String baseURL = "https://api.themoviedb.org/3";
   final Dio _dio = Dio();
 

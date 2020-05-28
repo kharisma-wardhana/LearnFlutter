@@ -120,7 +120,7 @@ class _GenreMoviesState extends State<GenreMovies> {
                         )
                       : Container(
                           width: 110,
-                          height: size.height * 0.2,
+                          height: size.height * 0.25,
                           margin: EdgeInsets.only(left: 5),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(10)),

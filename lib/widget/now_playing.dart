@@ -37,19 +37,25 @@ class _NowPlayingState extends State<NowPlaying> {
   }
 
   Widget _buildLoadingWidget() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(
-            height: 30.0,
-            width: 30.0,
-            child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Style.Colors.mainColor),
-              strokeWidth: 3.0,
-            ),
-          )
-        ],
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      color: Style.Colors.titleColor,
+      height: 220,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+              height: 30.0,
+              width: 30.0,
+              child: CircularProgressIndicator(
+                valueColor:
+                    AlwaysStoppedAnimation<Color>(Style.Colors.mainColor),
+                strokeWidth: 3.0,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

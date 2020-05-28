@@ -1,7 +1,13 @@
 import 'package:belajar_flutter/screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+Future main() async {
+  await DotEnv().load('assets/.env');
+  //...runapp
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
