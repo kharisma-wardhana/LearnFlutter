@@ -41,10 +41,21 @@ class _ListGenreState extends State<ListGenre>
     Size size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.4,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(15),
+              bottomRight: Radius.circular(15)),
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: <Color>[
+                Color(0xFF5892D4),
+                Color(0xFF141E30),
+              ])),
       child: DefaultTabController(
           length: genres.length,
           child: Scaffold(
-            backgroundColor: Style.Colors.mainColorDark,
+            backgroundColor: Colors.transparent,
             appBar: PreferredSize(
                 child: AppBar(
                   backgroundColor: Style.Colors.mainColorDark,

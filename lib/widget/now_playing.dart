@@ -111,8 +111,8 @@ class _NowPlayingState extends State<NowPlaying> {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                               colors: [
-                                Style.Colors.secondColor,
-                                Style.Colors.mainColor.withOpacity(0.1)
+                                Color(0xFF5892D4),
+                                Color(0xFF141E30).withOpacity(0.2),
                               ],
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter,
